@@ -60,4 +60,20 @@
   (setq +org-present-text-scale 0)
   (setq org-tree-slide-indicator '(:next nil
                                    :previous nil
-                                   :content nil)))
+                                   :content nil))
+  (defvar my-org-src-block-faces nil)
+  (defun my-show-headers ()
+    (setq org-src-block-faces 'my-org-src-block-faces)
+    (hide-lines-show-all))
+  (defun my-hide-headers ()
+    (setq my-org-src-block-faces 'org-src-block-faces)
+    (setq org-src-block-faces
+          '(("emacs-lisp" (:background "cornsilk"))))
+    (hide-lines-matching "#\\+RESULTS:")
+    (hide-lines-matching "#\\+begin_src")
+    (hide-lines-matching "#\\+BEGIN_SRC")
+    (hide-lines-matching "#\\+end_src")
+    (hide-lines-matching "#\\+END_SRC"))
+    ;; (hide-lines-matching "#\\+attr_org:"))
+  (add-hook 'org-tree-slide-play-hook #'my-hide-headers)
+  (add-hook 'org-tree-slide-stop-hook #'my-show-headers))
