@@ -38,6 +38,10 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+;; :tools magit
+;; Enable gravatars when viewing commits
+(setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
+
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (concat doom-private-dir "pics/splash.png"))
 
