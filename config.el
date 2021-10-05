@@ -82,6 +82,17 @@
 (after! magit
   (setq magit-diff-refine-hunk 'all))
 
+;; Tweak org-pomodoro
+(after! org-pomodoro
+  (setq org-pomodoro-start-sound t
+        org-pomodoro-ticking-sound-p nil
+        org-pomodoro-audio-player (executable-find "mpv-via-hdmi")
+        org-pomodoro-start-sound (concat doom-private-dir "sounds/bell.mp3")
+        org-pomodoro-finished-sound (concat doom-private-dir "sounds/bell.mp3")
+        org-pomodoro-overtime-sound (concat doom-private-dir "sounds/bell.mp3")
+        org-pomodoro-short-break-sound (concat doom-private-dir "sounds/bell.mp3")
+        org-pomodoro-long-break-sound (concat doom-private-dir "sounds/bells.mp3")))
+
 ;; https://github.com/takaxp/org-tree-slide
 (after! org-tree-slide
   ;; Don't increase the font size
