@@ -35,6 +35,10 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; Disable confirmation on exit
+;; https://github.com/hlissner/doom-emacs/issues/2688
+(setq confirm-kill-emacs nil)
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
