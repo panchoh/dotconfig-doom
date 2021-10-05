@@ -81,3 +81,12 @@
 ;; Enable granular diff-highlights for all hunks
 (after! magit
   (setq magit-diff-refine-hunk 'all))
+
+;; https://github.com/takaxp/org-tree-slide
+(after! org-tree-slide
+  ;; Don't increase the font size
+  (setq +org-present-text-scale 0)
+  ;; Remove indicators
+  (setq org-tree-slide-indicator '(:next nil
+                                   :previous nil
+                                   :content nil)))
