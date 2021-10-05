@@ -42,6 +42,10 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'visual)
 
+;; Focus on the newly created window
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
+
 ;; Disable confirmation on exit
 ;; https://github.com/hlissner/doom-emacs/issues/2688
 (setq confirm-kill-emacs nil)
