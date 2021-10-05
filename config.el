@@ -90,3 +90,15 @@
   (setq org-tree-slide-indicator '(:next nil
                                    :previous nil
                                    :content nil)))
+
+;; ediff init.el against current init.example.el
+;; https://github.com/hlissner/doom-emacs/issues/581#issuecomment-645448095
+(defun doom/ediff-init-and-example ()
+  "ediff the current `init.el' with the example in doom-emacs-dir"
+  (interactive)
+  (ediff-files (concat doom-private-dir "init.el")
+               (concat doom-emacs-dir "init.example.el")))
+
+(define-key! help-map
+  "di"   #'doom/ediff-init-and-example
+  )
