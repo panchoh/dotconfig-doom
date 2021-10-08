@@ -45,7 +45,7 @@
 (setq magit-repository-directories '(("~/sandbox" . 2)))
 
 ;;; :ui doom-dashboard
-(setq fancy-splash-image (concat doom-private-dir "pics/splash.png"))
+(setq fancy-splash-image (concat doom-private-dir "pics/arrival_meme_vi_lowres.jpeg"))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
