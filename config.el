@@ -46,6 +46,12 @@
 
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (concat doom-private-dir "pics/arrival_meme_vi_lowres.jpeg"))
+;; Hide the banner, menu, benchmark and link to GitHub for as minimalistic a
+;; startup screen as possible.
+;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
+;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-loaded)
+;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
