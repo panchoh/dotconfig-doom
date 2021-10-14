@@ -61,6 +61,12 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'visual)
 
+;; IMO, modern editors have trained a bad habit into us all: a burning need for
+;; completion all the time -- as we type, as we breathe, as we pray to the
+;; ancient ones -- but how often do you *really* need that information? I say
+;; rarely. So opt for manual completion:
+;; (setq company-idle-delay nil)
+
 ;; Focus on the newly created window
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
