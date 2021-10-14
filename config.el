@@ -67,6 +67,14 @@
 ;; rarely. So opt for manual completion:
 ;; (setq company-idle-delay nil)
 
+;; Disable invasive lsp-mode features
+;; (setq lsp-ui-doc-enable nil
+;;       lsp-enable-symbol-highlighting nil
+;;    ;; If an LSP server isn't present when I start a prog-mode buffer, you
+;;    ;; don't need to tell me. I know. On some systems I don't care to have a
+;;    ;; whole development environment for some ecosystems.
+;;       +lsp-prompt-to-install-server 'quiet)
+
 ;; Focus on the newly created window
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
