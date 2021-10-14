@@ -53,6 +53,10 @@
 ;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-loaded)
 ;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 
+;; Disable smartparens
+;; Seen on Discord on 2020-05-21, comment by hlissner
+;; (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'visual)
