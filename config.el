@@ -41,6 +41,8 @@
 ;; :tools magit
 ;; Enable gravatars when viewing commits
 (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
+;; Tell magit where to look for local repos
+(setq magit-repository-directories '(("~/sandbox" . 2)))
 
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (concat doom-private-dir "pics/splash.png"))
