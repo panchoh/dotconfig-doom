@@ -34,6 +34,11 @@
 ;; Possible caveat: https://github.com/hlissner/emacs-doom-themes/issues/392
 (setq doom-themes-treemacs-theme 'doom-colors)
 
+;; Enable Alarm Bell
+;; https://www.emacswiki.org/emacs/AlarmBell
+(setq visible-bell       1
+      ring-bell-function nil)
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
