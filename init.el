@@ -4,8 +4,8 @@
 ;; in. Remember to run 'doom sync' after modifying it!
 
 ;; NOTE Press 'SPC h d h' (or 'C-h d h' for non-vim users) to access Doom's
-;;      documentation. There you'll find a "Module Index" link where you'll find
-;;      a comprehensive list of Doom's modules and what flags they support.
+;;      documentation. There you'll find a link to Doom's Module Index where all
+;;      of our modules are listed, including what flags they support.
 
 ;; NOTE Move your cursor over a module's name (or its flags) and press 'K' (or
 ;;      'C-c c k' for non-vim users) to view its documentation. This works on
@@ -34,13 +34,14 @@
        ;; (emoji +unicode)   ; 🙂
        hl-todo               ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;; hydra
-       ;; indent-guides      ; highlighted indent columns
-       ;; ligatures          ; ligatures and symbols to make your code pretty again
+       indent-guides         ; highlighted indent columns
+       ;; (ligatures +extra)    ; ligatures and symbols to make your code pretty again
        minimap               ; show a map of the code on the side
        modeline              ; snazzy, Atom-inspired modeline, plus API
        nav-flash             ; blink cursor line after big motions
        ;; neotree            ; a project drawer, like NERDTree for vim
        ophints               ; highlight the region an operation acts on
+       ;; pixel-scroll
        (popup +all +defaults); tame sudden yet inevitable temporary windows
        ;; tabs               ; a tab bar for Emacs
        (treemacs +lsp)       ; a project drawer, like neotree but cooler
@@ -103,6 +104,7 @@
        ;; taskrunner         ; taskrunner for all your projects
        terraform             ; infrastructure as code
        ;; tmux               ; an API for interacting with tmux
+       tree-sitter       ; syntax and parsing, sitting in a tree...
        ;; upload             ; map local to remote projects via ssh/ftp
 
        :os
@@ -131,7 +133,7 @@
        ;; fsharp             ; ML stands for Microsoft's Language
        ;; fstar              ; (dependent) types and (monadic) effects and Z3
        ;; gdscript           ; the language you waited for
-       (go +lsp)             ; the hipster dialect
+       (go +lsp +tree-sitter); the hipster dialect
        (haskell +lsp)        ; a language that's lazier than I am
        ;; hy                 ; readability of scheme w/ speed of python
        ;; idris              ; a language you can depend on
@@ -146,7 +148,7 @@
        ;; lua                ; one-based indices? one-based indices
        (markdown +grip)      ; writing docs for people to ignore
        ;; nim                ; python + lisp at the speed of c
-       nix                   ; I hereby declare "nix geht mehr!"
+       (nix +tree-sitter)    ; I hereby declare "nix geht mehr!"
        ;; ocaml              ; an objective camel
        (org
         +hugo
@@ -184,7 +186,7 @@
 
        :app
        ;; calendar
-       ;; emms
+       emms
        ;; everywhere         ; *leave* Emacs!? You must be joking
        ;; irc                ; how neckbeards socialize
        ;; (rss +org)         ; emacs as an RSS reader

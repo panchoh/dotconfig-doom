@@ -21,9 +21,11 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "IBM Plex Mono" :size 18)
-      doom-big-font (font-spec :family "IBM Plex Mono" :size 32)
-      doom-variable-pitch-font (font-spec :family "IBM Plex Sans" :size 18))
+(setq doom-font                 (font-spec :family "Iosevka"      :size 22 :weight 'light)
+      doom-big-font             (font-spec :family "Iosevka"      :size 32 :weight 'light)
+      doom-unicode-font         (font-spec :family "Iosevka"      :size 22 :weight 'light)
+      doom-variable-pitch-font  (font-spec :family "Iosevka Aile" :size 20 :weight 'light)
+      doom-serif-font           (font-spec :family "Iosevka Slab" :size 22 :weight 'light))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -39,15 +41,32 @@
 (setq visible-bell       1
       ring-bell-function nil)
 
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Fill-Commands.html
+(setq sentence-end-double-space t
+      colon-double-space        t)
+
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+
+;; https://ox-hugo.scripter.co/doc/dates/#date
+;; https://www.gnu.org/software/emacs/manual/html_node/org/Closing-items.html
+;; https://emacs.stackexchange.com/questions/47951/marking-a-todo-item-done-does-not-create-a-closing-timestamp-in-org-mode
+(setq org-log-done 'time)
+;; (setq org-log-done-with-time nil)
 
 ;; :tools magit
 ;; Enable gravatars when viewing commits
 (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
 ;; Tell magit where to look for local repos
-(setq magit-repository-directories '(("~/sandbox" . 2)))
+(setq magit-repository-directories `(("~/sandbox"  . 2)
+                                     ("~/exercism" . 2)))
+
+;; TODO
+;; projectile-project-search-path SPC p D
+(setq projectile-project-search-path `(("~/sandbox"  . 2)
+                                       ("~/exercism" . 2)))
 
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (concat doom-private-dir "pics/arrival_meme_vi_lowres.jpeg"))
@@ -72,13 +91,26 @@
 ;; rarely. So opt for manual completion:
 ;; (setq company-idle-delay nil)
 
+(setq highlight-indent-guides-method 'bitmap)
+
 ;; Disable invasive lsp-mode features
+;; (setq lsp-ui-doc-enable nil)
 ;; (setq lsp-ui-doc-enable nil
 ;;       lsp-enable-symbol-highlighting nil
 ;;    ;; If an LSP server isn't present when I start a prog-mode buffer, you
 ;;    ;; don't need to tell me. I know. On some systems I don't care to have a
 ;;    ;; whole development environment for some ecosystems.
 ;;       +lsp-prompt-to-install-server 'quiet)
+
+;; TODO: try this!
+;; Ummmm...
+;; (setq lsp-ui-doc-position 'top)
+;; (setq lsp-ui-doc-show-with-cursor t)
+
+;; 2021-12-06 @ Salamanca
+;; https://pkg.go.dev/mvdan.cc/gofumpt
+;; https://github.com/emacs-lsp/lsp-mode/blob/8f9259af6fc80a609c2c068d0f59c371205aca89/clients/lsp-go.el#L246
+(setq lsp-go-use-gofumpt t)
 
 ;; Focus on the newly created window
 (setq evil-split-window-below t
@@ -131,6 +163,23 @@
                                    :previous nil
                                    :content nil)))
 
+;; Provide a function to export all entries at once
+(after! ox-hugo
+  (defun org-hugo-export-all-wim-to-md ()
+    (interactive)
+    (org-hugo-export-wim-to-md :all-subtrees nil nil :noerror)))
+
+;; (after! go-mode ; in this case the major mode and package named the same thing
+;;   (set-ligatures! 'go-mode
+;;     :def "func" ; function keyword
+;;     :true "true" :false "false"
+;;     ; this will replace not only definitions
+;;     ; but coresponding functions aswell
+;;     :int "int" :str "string"
+;;     :float "float" :bool "bool"
+;;     :for "for"
+;;     :return "return" :yield "yield"))
+
 ;; ediff init.el against current init.example.el
 ;; https://github.com/hlissner/doom-emacs/issues/581#issuecomment-645448095
 (defun doom/ediff-init-and-example ()
@@ -142,3 +191,13 @@
 (define-key! help-map
   "di"   #'doom/ediff-init-and-example
   )
+
+
+;; pinentry
+(use-package! pinentry
+        :init (setq epg-pinentry-mode `loopback)
+              (pinentry-start))
+
+
+;; alejandra nix formatter
+(set-formatter! 'alejandra "alejandra --quiet" :modes '(nix-mode))
