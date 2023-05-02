@@ -201,3 +201,8 @@
 
 ;; alejandra nix formatter
 (set-formatter! 'alejandra "alejandra --quiet" :modes '(nix-mode))
+
+
+;; https://www.emacswiki.org/emacs/SmoothScrolling
+(pixel-scroll-precision-mode)
+(setq pixel-scroll-precision-large-scroll-height 40.0)
