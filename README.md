@@ -12,5 +12,5 @@ Don't forget to check Doom Emacs' author own
 ## Install
 
 ```sh
-git clone https://github.com/panchoh/dotconfig-doom ~/.config/doom && doom sync
+git clone https://github.com/panchoh/dotconfig-doom.git ~/.config/doom && doom sync
 ```
