@@ -206,3 +206,13 @@
 ;; https://www.emacswiki.org/emacs/SmoothScrolling
 (pixel-scroll-precision-mode)
 (setq pixel-scroll-precision-large-scroll-height 40.0)
+
+
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
