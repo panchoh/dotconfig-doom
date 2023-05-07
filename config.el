@@ -223,7 +223,7 @@
 (map! :after vertico
       :map vertico-map
       "DEL" #'backward-delete-char
-      "C-DEL" #'vertico-directory-delete-char)
+      "M-DEL" #'vertico-directory-delete-char)
 
 
 ;; https://github.com/doomemacs/doomemacs/issues/3609
