@@ -224,3 +224,8 @@
       :map vertico-map
       "DEL" #'backward-delete-char
       "C-DEL" #'vertico-directory-delete-char)
+
+
+;; https://github.com/doomemacs/doomemacs/issues/3609
+;; https://github.com/doomemacs/doomemacs/commit/d70b2ff776b22fd725f9fa0c197e56d7624a56e0
+;; (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
