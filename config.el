@@ -69,7 +69,7 @@
                                        ("~/exercism" . 2)))
 
 ;;; :ui doom-dashboard
-(setq fancy-splash-image (concat doom-private-dir "pics/arrival_meme_vi_lowres.jpeg"))
+(setq fancy-splash-image (concat doom-user-dir "pics/arrival_meme_vi_lowres.jpeg"))
 ;; Hide the banner, menu, benchmark and link to GitHub for as minimalistic a
 ;; startup screen as possible.
 ;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-banner)
@@ -148,11 +148,11 @@
   (setq org-pomodoro-start-sound t
         org-pomodoro-ticking-sound-p nil
         org-pomodoro-audio-player (executable-find "mpv-via-hdmi")
-        org-pomodoro-start-sound (concat doom-private-dir "sounds/bell.mp3")
-        org-pomodoro-finished-sound (concat doom-private-dir "sounds/bell.mp3")
-        org-pomodoro-overtime-sound (concat doom-private-dir "sounds/bell.mp3")
-        org-pomodoro-short-break-sound (concat doom-private-dir "sounds/bell.mp3")
-        org-pomodoro-long-break-sound (concat doom-private-dir "sounds/bells.mp3")))
+        org-pomodoro-start-sound (concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-finished-sound (concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-overtime-sound (concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-short-break-sound (concat doom-user-dir "sounds/bell.mp3")
+        org-pomodoro-long-break-sound (concat doom-user-dir "sounds/bells.mp3")))
 
 ;; https://github.com/takaxp/org-tree-slide
 (after! org-tree-slide
