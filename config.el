@@ -216,3 +216,11 @@
               ("TAB" . 'copilot-accept-completion)
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
+
+;; https://github.com/minad/vertico/issues/262
+;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/56
+(map! :after vertico
+      :map vertico-map
+      "DEL" #'backward-delete-char
+      "C-DEL" #'vertico-directory-delete-char)
