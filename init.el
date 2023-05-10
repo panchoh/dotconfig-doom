@@ -166,7 +166,9 @@
        (python
         +lsp
         +pyenv
-        +treesitter)  ; beautiful is better than ugly
+        +pyright
+        +treesitter
+       )                     ; beautiful is better than ugly
        ;; qt                 ; the 'cutest' gui framework ever
        ;; racket             ; a DSL for DSLs
        ;; raku               ; the artist formerly known as perl6
