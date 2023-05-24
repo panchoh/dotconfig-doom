@@ -117,8 +117,7 @@
         +docsets
         +dictionary)         ; navigate your code and its documentation
        (lsp
-        +peek
-        +eglot)              ; M-x vscode
+        +peek)               ; M-x vscode
        (magit
         +forge)              ; a git porcelain for Emacs
        make                  ; run make tasks from Emacs
