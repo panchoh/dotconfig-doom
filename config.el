@@ -60,12 +60,14 @@
 ;; Enable gravatars when viewing commits
 (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     "))
 ;; Tell magit where to look for local repos
-(setq magit-repository-directories `(("~/sandbox"  . 2)
+(setq magit-repository-directories `(("/etc/nixos" . 1)
+                                     ("~/sandbox"  . 2)
                                      ("~/exercism" . 2)))
 
 ;; TODO
 ;; projectile-project-search-path SPC p D
-(setq projectile-project-search-path `(("~/sandbox"  . 2)
+(setq projectile-project-search-path `(("/etc/nixos" . 1)
+                                       ("~/sandbox"  . 2)
                                        ("~/exercism" . 2)))
 
 ;;; :ui doom-dashboard
