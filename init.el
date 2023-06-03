@@ -26,6 +26,7 @@
        ;; ido                ; the other *other* search engine...
        ;; ivy                ; a search engine for love and life
        (vertico
+        +childframe
         +icons)              ; the search engine of the future
 
        :ui
