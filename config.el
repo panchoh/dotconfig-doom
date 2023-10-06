@@ -232,3 +232,8 @@
 ;; https://github.com/doomemacs/doomemacs/issues/3609
 ;; https://github.com/doomemacs/doomemacs/commit/d70b2ff776b22fd725f9fa0c197e56d7624a56e0
 ;; (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+
+
+;; https://github.com/doomemacs/doomemacs/issues/2673#issuecomment-595361339
+;; https://www.emacswiki.org/emacs/WhiteSpace
+;; (global-whitespace-mode +1)
