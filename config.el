@@ -194,10 +194,12 @@
   )
 
 
+;; https://github.com/doomemacs/doomemacs/issues/4647
+;; TODO: verify that entry in `packages.el` is also needed!
 ;; pinentry
 (use-package! pinentry
-        :init (setq epg-pinentry-mode `loopback)
-              (pinentry-start))
+  :init (setq epg-pinentry-mode `loopback)
+  (pinentry-start))
 
 
 ;; alejandra nix formatter
