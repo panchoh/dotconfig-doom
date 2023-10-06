@@ -108,6 +108,9 @@
 ;; (setq lsp-ui-doc-position 'top)
 ;; (setq lsp-ui-doc-show-with-cursor t)
 
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell (executable-find "fish"))
+
 ;; 2021-12-06 @ Salamanca
 ;; https://pkg.go.dev/mvdan.cc/gofumpt
 ;; https://github.com/emacs-lsp/lsp-mode/blob/8f9259af6fc80a609c2c068d0f59c371205aca89/clients/lsp-go.el#L246
