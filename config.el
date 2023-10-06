@@ -91,7 +91,8 @@
 ;; rarely. So opt for manual completion:
 ;; (setq company-idle-delay nil)
 
-(setq highlight-indent-guides-method 'bitmap)
+;; Can't use 'bitmap, otherwise minimap breaks horribly
+;; (setq highlight-indent-guides-method 'bitmap)
 
 ;; Disable invasive lsp-mode features
 ;; (setq lsp-ui-doc-enable nil)
