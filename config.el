@@ -206,7 +206,7 @@
 
 
 ;; alejandra nix formatter
-(set-formatter! 'alejandra "alejandra --quiet" :modes '(nix-mode))
+(set-formatter! 'alejandra '("alejandra" "--quiet") :modes '(nix-mode))
 
 
 ;; https://www.emacswiki.org/emacs/SmoothScrolling
