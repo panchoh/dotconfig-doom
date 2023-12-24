@@ -206,6 +206,7 @@
 ;; https://github.com/doomemacs/doomemacs/issues/4647
 ;; TODO: verify that entry in `packages.el` is also needed!
 ;; pinentry
+;; https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html
 (use-package! pinentry
   :init (setq epg-pinentry-mode `loopback)
   (pinentry-start))
