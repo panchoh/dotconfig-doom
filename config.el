@@ -208,6 +208,7 @@
 ;; pinentry
 ;; https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html
 (use-package! pinentry
+  :defer t
   :init (setq epg-pinentry-mode `loopback)
   (pinentry-start))
 
@@ -219,12 +220,14 @@
 ;; https://github.com/oxalica/nil?tab=readme-ov-file#emacs-with-lsp-mode
 ;; SPC c f
 (use-package! lsp-nix
+  :defer t
   :custom (lsp-nix-nil-formatter ["alejandra" "--quiet"]))
 
 ;; https://github.com/doomemacs/doomemacs/pull/7497
 ;; Use wrapper that adds the --quiet flag
 ;; SPC m p
 (use-package! nix-mode
+  :defer t
   :custom (nix-nixfmt-bin "alejandra-the-quiet" ))
 
 
@@ -235,6 +238,7 @@
 
 ;; accept completion from copilot and fallback to company
 ;; (use-package! copilot
+;;   :defer t
 ;;   :hook (prog-mode . copilot-mode)
 ;;   :bind (:map copilot-completion-map
 ;;               ("<tab>" . 'copilot-accept-completion)
