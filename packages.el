@@ -54,4 +54,8 @@
 
 (package! pkgbuild-mode)
 
+;; See config.el
+;; (package! nix-ts-mode)
+;; (package! nix-ts-mode :recipe (:host github :repo "remi-gelinas/nix-ts-mode" :files ("*.el" "dist")))
+
 ;; (package! copilot :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
