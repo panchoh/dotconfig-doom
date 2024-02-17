@@ -184,7 +184,7 @@
 ;;     :def "func" ; function keyword
 ;;     :true "true" :false "false"
 ;;     ; this will replace not only definitions
-;;     ; but coresponding functions aswell
+;;     ; but corresponding functions as well
 ;;     :int "int" :str "string"
 ;;     :float "float" :bool "bool"
 ;;     :for "for"
