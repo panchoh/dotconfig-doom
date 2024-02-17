@@ -252,5 +252,6 @@
         +smartparens))
 
 ;; https://github.com/doomemacs/doomemacs/issues/6811#issuecomment-1257642898
+(setq native-comp-deferred-compilation nil)
 (after! (doom-packages straight)
   (setq straight--native-comp-available t))
